@@ -1,0 +1,200 @@
+Startup_Domain,Initial_Capital,Market_Size,Expected_Monthly_Revenue,Operational_Cost,Team_Size,Experience_Level,Location,Investment_Amount,Profit_Margin,Growth_Score,Risk_Level,Decision
+Textile,500000,25M,120000,80000,45,Expert,Shevapet,700000,33.3,9.2,Low,Invest
+Steel Production,1500000,100M,300000,220000,80,Senior,Steel Plant Road,2000000,26.6,8.8,Low,Invest
+IT Services,200000,10M,45000,35000,12,Intermediate,Karuppur,150000,22.2,7.5,Medium,Improve
+Food Processing,300000,15M,50000,48000,20,Junior,Gugai,0,4.0,3.5,High,Avoid
+Agriculture,100000,50M,25000,15000,10,Senior,Suramangalam,150000,40.0,8.0,Low,Invest
+Textile,400000,20M,70000,65000,35,Intermediate,Fairlands,0,7.1,5.0,High,Avoid
+Logistics,600000,30M,100000,75000,25,Senior,Seelanaickenpatti,500000,25.0,7.9,Medium,Improve
+IT Services,150000,8M,30000,28000,8,Junior,Meyyanur,0,6.6,4.2,High,Avoid
+Steel Production,2000000,150M,500000,380000,100,Expert,Omalur Road,2500000,24.0,9.5,Low,Invest
+Textile,350000,18M,60000,40000,30,Senior,Ammapet,400000,33.3,8.1,Low,Invest
+Agriculture,250000,40M,40000,25000,15,Intermediate,Attur Road,300000,37.5,7.6,Low,Invest
+Food Processing,450000,22M,85000,60000,28,Senior,Hasthampatti,550000,29.4,8.3,Low,Invest
+IT Services,500000,40M,90000,70000,18,Expert,Alagapuram,600000,22.2,8.9,Medium,Invest
+Textile,600000,35M,110000,95000,50,Senior,Shevapet,0,13.6,6.8,Medium,Improve
+Steel Production,1200000,80M,250000,200000,70,Intermediate,Steel Plant Road,1000000,20.0,7.2,Medium,Improve
+Logistics,300000,12M,40000,38000,15,Junior,Gugai,0,5.0,4.1,High,Avoid
+Agriculture,150000,30M,35000,20000,12,Senior,Salem Junction,200000,42.8,8.4,Low,Invest
+IT Services,250000,15M,55000,40000,14,Intermediate,Karuppur,300000,27.2,7.8,Low,Invest
+Food Processing,200000,10M,30000,28000,10,Junior,Ammapet,0,6.6,4.5,High,Avoid
+Steel Production,3000000,250M,800000,500000,150,Expert,Omalur Road,4000000,37.5,9.8,Low,Invest
+Healthcare,800000,45M,150000,100000,30,Senior,Fairlands,1000000,33.3,8.7,Low,Invest
+Education,150000,5M,20000,18000,8,Junior,Suramangalam,0,10.0,4.2,High,Avoid
+Textile,700000,40M,130000,90000,55,Expert,Gugai,900000,30.7,9.0,Low,Invest
+Logistics,450000,20M,60000,55000,18,Intermediate,Seelanaickenpatti,0,8.3,5.4,High,Improve
+SaaS,300000,12M,40000,30000,10,Senior,Karuppur,350000,25.0,7.8,Medium,Improve
+Retail,250000,18M,45000,35000,12,Intermediate,Hasthampatti,200000,22.2,6.9,Medium,Improve
+Agriculture,50000,10M,15000,8000,5,Junior,Attur Road,75000,46.6,7.2,Low,Invest
+Steel Production,5000000,500M,1200000,900000,200,Expert,Steel Plant Road,6000000,25.0,9.6,Low,Invest
+Food Processing,100000,8M,18000,16000,6,Junior,Ammapet,0,11.1,3.8,High,Avoid
+IT Services,1000000,60M,180000,140000,35,Expert,Alagapuram,1200000,22.2,9.1,Low,Invest
+Textile,200000,10M,30000,25000,15,Junior,Shevapet,0,16.6,5.5,Medium,Improve
+Automobile,900000,55M,140000,110000,40,Senior,Meyyanur,1100000,21.4,8.2,Medium,Invest
+Logistics,120000,5M,20000,18000,5,Junior,Gugai,0,10.0,4.0,High,Avoid
+SaaS,550000,25M,75000,55000,14,Senior,Karuppur,600000,26.6,8.4,Low,Invest
+Education,400000,15M,55000,45000,20,Intermediate,Salem Junction,450000,18.1,7.1,Medium,Improve
+Steel Production,900000,45M,180000,150000,45,Senior,Steel Plant Road,0,16.6,6.5,Medium,Improve
+Textile,1000000,60M,200000,140000,70,Expert,Gugai,1500000,30.0,9.3,Low,Invest
+Agriculture,300000,22M,50000,30000,18,Senior,Attur Road,400000,40.0,8.1,Low,Invest
+Healthcare,1500000,80M,350000,250000,60,Expert,Fairlands,2000000,28.5,9.4,Low,Invest
+Retail,80000,4M,12000,11000,4,Junior,Ammapet,0,8.3,3.1,High,Avoid
+Food Processing,650000,30M,110000,85000,32,Senior,Hasthampatti,800000,22.7,8.0,Medium,Invest
+IT Services,350000,18M,65000,50000,15,Intermediate,Alagapuram,400000,23.0,7.6,Medium,Improve
+Textile,150000,5M,25000,22000,10,Junior,Shevapet,0,12.0,4.8,High,Avoid
+Logistics,800000,35M,130000,95000,30,Senior,Seelanaickenpatti,1000000,26.9,8.5,Low,Invest
+SaaS,200000,8M,25000,28000,5,Intermediate,Karuppur,0,-12.0,2.5,High,Avoid
+Automobile,2500000,120M,450000,350000,85,Expert,Omalur Road,3000000,22.2,9.2,Low,Invest
+Education,600000,28M,90000,75000,25,Senior,Salem Junction,700000,16.6,7.7,Medium,Improve
+Textile,450000,22M,80000,55000,38,Senior,Gugai,550000,31.2,8.2,Low,Invest
+Agriculture,120000,15M,28000,18000,12,Intermediate,Attur Road,150000,35.7,7.4,Low,Invest
+IT Services,750000,45M,140000,100000,22,Senior,Alagapuram,900000,28.5,8.8,Low,Invest
+Textile,500000,25M,120000,80000,45,Expert,Shevapet,700000,33.3,9.2,Low,Invest
+Steel Production,1500000,100M,300000,220000,80,Senior,Steel Plant Road,2000000,26.6,8.8,Low,Invest
+IT Services,200000,10M,45000,35000,12,Intermediate,Karuppur,150000,22.2,7.5,Medium,Improve
+Food Processing,300000,15M,50000,48000,20,Junior,Gugai,0,4.0,3.5,High,Avoid
+Agriculture,100000,50M,25000,15000,10,Senior,Suramangalam,150000,40.0,8.0,Low,Invest
+Textile,400000,20M,70000,65000,35,Intermediate,Fairlands,0,7.1,5.0,High,Avoid
+Logistics,600000,30M,100000,75000,25,Senior,Seelanaickenpatti,500000,25.0,7.9,Medium,Improve
+IT Services,150000,8M,30000,28000,8,Junior,Meyyanur,0,6.6,4.2,High,Avoid
+Steel Production,2000000,150M,500000,380000,100,Expert,Omalur Road,2500000,24.0,9.5,Low,Invest
+Textile,350000,18M,60000,40000,30,Senior,Ammapet,400000,33.3,8.1,Low,Invest
+Agriculture,250000,40M,40000,25000,15,Intermediate,Attur Road,300000,37.5,7.6,Low,Invest
+Food Processing,450000,22M,85000,60000,28,Senior,Hasthampatti,550000,29.4,8.3,Low,Invest
+IT Services,500000,40M,90000,70000,18,Expert,Alagapuram,600000,22.2,8.9,Medium,Invest
+Textile,600000,35M,110000,95000,50,Senior,Shevapet,0,13.6,6.8,Medium,Improve
+Steel Production,1200000,80M,250000,200000,70,Intermediate,Steel Plant Road,1000000,20.0,7.2,Medium,Improve
+Logistics,300000,12M,40000,38000,15,Junior,Gugai,0,5.0,4.1,High,Avoid
+Agriculture,150000,30M,35000,20000,12,Senior,Salem Junction,200000,42.8,8.4,Low,Invest
+IT Services,250000,15M,55000,40000,14,Intermediate,Karuppur,300000,27.2,7.8,Low,Invest
+Food Processing,200000,10M,30000,28000,10,Junior,Ammapet,0,6.6,4.5,High,Avoid
+Steel Production,3000000,250M,800000,500000,150,Expert,Omalur Road,4000000,37.5,9.8,Low,Invest
+Healthcare,800000,45M,150000,100000,30,Senior,Fairlands,1000000,33.3,8.7,Low,Invest
+Education,150000,5M,20000,18000,8,Junior,Suramangalam,0,10.0,4.2,High,Avoid
+Textile,700000,40M,130000,90000,55,Expert,Gugai,900000,30.7,9.0,Low,Invest
+Logistics,450000,20M,60000,55000,18,Intermediate,Seelanaickenpatti,0,8.3,5.4,High,Improve
+SaaS,300000,12M,40000,30000,10,Senior,Karuppur,350000,25.0,7.8,Medium,Improve
+Retail,250000,18M,45000,35000,12,Intermediate,Hasthampatti,200000,22.2,6.9,Medium,Improve
+Agriculture,50000,10M,15000,8000,5,Junior,Attur Road,75000,46.6,7.2,Low,Invest
+Steel Production,5000000,500M,1200000,900000,200,Expert,Steel Plant Road,6000000,25.0,9.6,Low,Invest
+Food Processing,100000,8M,18000,16000,6,Junior,Ammapet,0,11.1,3.8,High,Avoid
+IT Services,1000000,60M,180000,140000,35,Expert,Alagapuram,1200000,22.2,9.1,Low,Invest
+Textile,200000,10M,30000,25000,15,Junior,Shevapet,0,16.6,5.5,Medium,Improve
+Automobile,900000,55M,140000,110000,40,Senior,Meyyanur,1100000,21.4,8.2,Medium,Invest
+Logistics,120000,5M,20000,18000,5,Junior,Gugai,0,10.0,4.0,High,Avoid
+SaaS,550000,25M,75000,55000,14,Senior,Karuppur,600000,26.6,8.4,Low,Invest
+Education,400000,15M,55000,45000,20,Intermediate,Salem Junction,450000,18.1,7.1,Medium,Improve
+Steel Production,900000,45M,180000,150000,45,Senior,Steel Plant Road,0,16.6,6.5,Medium,Improve
+Textile,1000000,60M,200000,140000,70,Expert,Gugai,1500000,30.0,9.3,Low,Invest
+Agriculture,300000,22M,50000,30000,18,Senior,Attur Road,400000,40.0,8.1,Low,Invest
+Healthcare,1500000,80M,350000,250000,60,Expert,Fairlands,2000000,28.5,9.4,Low,Invest
+Retail,80000,4M,12000,11000,4,Junior,Ammapet,0,8.3,3.1,High,Avoid
+Food Processing,650000,30M,110000,85000,32,Senior,Hasthampatti,800000,22.7,8.0,Medium,Invest
+IT Services,350000,18M,65000,50000,15,Intermediate,Alagapuram,400000,23.0,7.6,Medium,Improve
+Textile,150000,5M,25000,22000,10,Junior,Shevapet,0,12.0,4.8,High,Avoid
+Logistics,800000,35M,130000,95000,30,Senior,Seelanaickenpatti,1000000,26.9,8.5,Low,Invest
+SaaS,200000,8M,25000,28000,5,Intermediate,Karuppur,0,-12.0,2.5,High,Avoid
+Automobile,2500000,120M,450000,350000,85,Expert,Omalur Road,3000000,22.2,9.2,Low,Invest
+Education,600000,28M,90000,75000,25,Senior,Salem Junction,700000,16.6,7.7,Medium,Improve
+Textile,450000,22M,80000,55000,38,Senior,Gugai,550000,31.2,8.2,Low,Invest
+Agriculture,120000,15M,28000,18000,12,Intermediate,Attur Road,150000,35.7,7.4,Low,Invest
+IT Services,750000,45M,140000,100000,22,Senior,Alagapuram,900000,28.5,8.8,Low,Invest
+Textile,500000,25M,120000,80000,45,Expert,Shevapet,700000,33.3,9.2,Low,Invest
+Steel Production,1500000,100M,300000,220000,80,Senior,Steel Plant Road,2000000,26.6,8.8,Low,Invest
+IT Services,200000,10M,45000,35000,12,Intermediate,Karuppur,150000,22.2,7.5,Medium,Improve
+Food Processing,300000,15M,50000,48000,20,Junior,Gugai,0,4.0,3.5,High,Avoid
+Agriculture,100000,50M,25000,15000,10,Senior,Suramangalam,150000,40.0,8.0,Low,Invest
+Textile,400000,20M,70000,65000,35,Intermediate,Fairlands,0,7.1,5.0,High,Avoid
+Logistics,600000,30M,100000,75000,25,Senior,Seelanaickenpatti,500000,25.0,7.9,Medium,Improve
+IT Services,150000,8M,30000,28000,8,Junior,Meyyanur,0,6.6,4.2,High,Avoid
+Steel Production,2000000,150M,500000,380000,100,Expert,Omalur Road,2500000,24.0,9.5,Low,Invest
+Textile,350000,18M,60000,40000,30,Senior,Ammapet,400000,33.3,8.1,Low,Invest
+Agriculture,250000,40M,40000,25000,15,Intermediate,Attur Road,300000,37.5,7.6,Low,Invest
+Food Processing,450000,22M,85000,60000,28,Senior,Hasthampatti,550000,29.4,8.3,Low,Invest
+IT Services,500000,40M,90000,70000,18,Expert,Alagapuram,600000,22.2,8.9,Medium,Invest
+Textile,600000,35M,110000,95000,50,Senior,Shevapet,0,13.6,6.8,Medium,Improve
+Steel Production,1200000,80M,250000,200000,70,Intermediate,Steel Plant Road,1000000,20.0,7.2,Medium,Improve
+Logistics,300000,12M,40000,38000,15,Junior,Gugai,0,5.0,4.1,High,Avoid
+Agriculture,150000,30M,35000,20000,12,Senior,Salem Junction,200000,42.8,8.4,Low,Invest
+IT Services,250000,15M,55000,40000,14,Intermediate,Karuppur,300000,27.2,7.8,Low,Invest
+Food Processing,200000,10M,30000,28000,10,Junior,Ammapet,0,6.6,4.5,High,Avoid
+Steel Production,3000000,250M,800000,500000,150,Expert,Omalur Road,4000000,37.5,9.8,Low,Invest
+Healthcare,800000,45M,150000,100000,30,Senior,Fairlands,1000000,33.3,8.7,Low,Invest
+Education,150000,5M,20000,18000,8,Junior,Suramangalam,0,10.0,4.2,High,Avoid
+Textile,700000,40M,130000,90000,55,Expert,Gugai,900000,30.7,9.0,Low,Invest
+Logistics,450000,20M,60000,55000,18,Intermediate,Seelanaickenpatti,0,8.3,5.4,High,Improve
+SaaS,300000,12M,40000,30000,10,Senior,Karuppur,350000,25.0,7.8,Medium,Improve
+Retail,250000,18M,45000,35000,12,Intermediate,Hasthampatti,200000,22.2,6.9,Medium,Improve
+Agriculture,50000,10M,15000,8000,5,Junior,Attur Road,75000,46.6,7.2,Low,Invest
+Steel Production,5000000,500M,1200000,900000,200,Expert,Steel Plant Road,6000000,25.0,9.6,Low,Invest
+Food Processing,100000,8M,18000,16000,6,Junior,Ammapet,0,11.1,3.8,High,Avoid
+IT Services,1000000,60M,180000,140000,35,Expert,Alagapuram,1200000,22.2,9.1,Low,Invest
+Textile,200000,10M,30000,25000,15,Junior,Shevapet,0,16.6,5.5,Medium,Improve
+Automobile,900000,55M,140000,110000,40,Senior,Meyyanur,1100000,21.4,8.2,Medium,Invest
+Logistics,120000,5M,20000,18000,5,Junior,Gugai,0,10.0,4.0,High,Avoid
+SaaS,550000,25M,75000,55000,14,Senior,Karuppur,600000,26.6,8.4,Low,Invest
+Education,400000,15M,55000,45000,20,Intermediate,Salem Junction,450000,18.1,7.1,Medium,Improve
+Steel Production,900000,45M,180000,150000,45,Senior,Steel Plant Road,0,16.6,6.5,Medium,Improve
+Textile,1000000,60M,200000,140000,70,Expert,Gugai,1500000,30.0,9.3,Low,Invest
+Agriculture,300000,22M,50000,30000,18,Senior,Attur Road,400000,40.0,8.1,Low,Invest
+Healthcare,1500000,80M,350000,250000,60,Expert,Fairlands,2000000,28.5,9.4,Low,Invest
+Retail,80000,4M,12000,11000,4,Junior,Ammapet,0,8.3,3.1,High,Avoid
+Food Processing,650000,30M,110000,85000,32,Senior,Hasthampatti,800000,22.7,8.0,Medium,Invest
+IT Services,350000,18M,65000,50000,15,Intermediate,Alagapuram,400000,23.0,7.6,Medium,Improve
+Textile,150000,5M,25000,22000,10,Junior,Shevapet,0,12.0,4.8,High,Avoid
+Logistics,800000,35M,130000,95000,30,Senior,Seelanaickenpatti,1000000,26.9,8.5,Low,Invest
+SaaS,200000,8M,25000,28000,5,Intermediate,Karuppur,0,-12.0,2.5,High,Avoid
+Automobile,2500000,120M,450000,350000,85,Expert,Omalur Road,3000000,22.2,9.2,Low,Invest
+Education,600000,28M,90000,75000,25,Senior,Salem Junction,700000,16.6,7.7,Medium,Improve
+Textile,450000,22M,80000,55000,38,Senior,Gugai,550000,31.2,8.2,Low,Invest
+Agriculture,120000,15M,28000,18000,12,Intermediate,Attur Road,150000,35.7,7.4,Low,Invest
+IT Services,750000,45M,140000,100000,22,Senior,Alagapuram,900000,28.5,8.8,Low,InvestTextile,500000,25M,120000,80000,45,Expert,Shevapet,700000,33.3,9.2,Low,Invest
+Steel Production,1500000,100M,300000,220000,80,Senior,Steel Plant Road,2000000,26.6,8.8,Low,Invest
+IT Services,200000,10M,45000,35000,12,Intermediate,Karuppur,150000,22.2,7.5,Medium,Improve
+Food Processing,300000,15M,50000,48000,20,Junior,Gugai,0,4.0,3.5,High,Avoid
+Agriculture,100000,50M,25000,15000,10,Senior,Suramangalam,150000,40.0,8.0,Low,Invest
+Textile,400000,20M,70000,65000,35,Intermediate,Fairlands,0,7.1,5.0,High,Avoid
+Logistics,600000,30M,100000,75000,25,Senior,Seelanaickenpatti,500000,25.0,7.9,Medium,Improve
+IT Services,150000,8M,30000,28000,8,Junior,Meyyanur,0,6.6,4.2,High,Avoid
+Steel Production,2000000,150M,500000,380000,100,Expert,Omalur Road,2500000,24.0,9.5,Low,Invest
+Textile,350000,18M,60000,40000,30,Senior,Ammapet,400000,33.3,8.1,Low,Invest
+Agriculture,250000,40M,40000,25000,15,Intermediate,Attur Road,300000,37.5,7.6,Low,Invest
+Food Processing,450000,22M,85000,60000,28,Senior,Hasthampatti,550000,29.4,8.3,Low,Invest
+IT Services,500000,40M,90000,70000,18,Expert,Alagapuram,600000,22.2,8.9,Medium,Invest
+Textile,600000,35M,110000,95000,50,Senior,Shevapet,0,13.6,6.8,Medium,Improve
+Steel Production,1200000,80M,250000,200000,70,Intermediate,Steel Plant Road,1000000,20.0,7.2,Medium,Improve
+Logistics,300000,12M,40000,38000,15,Junior,Gugai,0,5.0,4.1,High,Avoid
+Agriculture,150000,30M,35000,20000,12,Senior,Salem Junction,200000,42.8,8.4,Low,Invest
+IT Services,250000,15M,55000,40000,14,Intermediate,Karuppur,300000,27.2,7.8,Low,Invest
+Food Processing,200000,10M,30000,28000,10,Junior,Ammapet,0,6.6,4.5,High,Avoid
+Steel Production,3000000,250M,800000,500000,150,Expert,Omalur Road,4000000,37.5,9.8,Low,Invest
+Healthcare,800000,45M,150000,100000,30,Senior,Fairlands,1000000,33.3,8.7,Low,Invest
+Education,150000,5M,20000,18000,8,Junior,Suramangalam,0,10.0,4.2,High,Avoid
+Textile,700000,40M,130000,90000,55,Expert,Gugai,900000,30.7,9.0,Low,Invest
+Logistics,450000,20M,60000,55000,18,Intermediate,Seelanaickenpatti,0,8.3,5.4,High,Improve
+SaaS,300000,12M,40000,30000,10,Senior,Karuppur,350000,25.0,7.8,Medium,Improve
+Retail,250000,18M,45000,35000,12,Intermediate,Hasthampatti,200000,22.2,6.9,Medium,Improve
+Agriculture,50000,10M,15000,8000,5,Junior,Attur Road,75000,46.6,7.2,Low,Invest
+Steel Production,5000000,500M,1200000,900000,200,Expert,Steel Plant Road,6000000,25.0,9.6,Low,Invest
+Food Processing,100000,8M,18000,16000,6,Junior,Ammapet,0,11.1,3.8,High,Avoid
+IT Services,1000000,60M,180000,140000,35,Expert,Alagapuram,1200000,22.2,9.1,Low,Invest
+Textile,200000,10M,30000,25000,15,Junior,Shevapet,0,16.6,5.5,Medium,Improve
+Automobile,900000,55M,140000,110000,40,Senior,Meyyanur,1100000,21.4,8.2,Medium,Invest
+Logistics,120000,5M,20000,18000,5,Junior,Gugai,0,10.0,4.0,High,Avoid
+SaaS,550000,25M,75000,55000,14,Senior,Karuppur,600000,26.6,8.4,Low,Invest
+Education,400000,15M,55000,45000,20,Intermediate,Salem Junction,450000,18.1,7.1,Medium,Improve
+Steel Production,900000,45M,180000,150000,45,Senior,Steel Plant Road,0,16.6,6.5,Medium,Improve
+Textile,1000000,60M,200000,140000,70,Expert,Gugai,1500000,30.0,9.3,Low,Invest
+Agriculture,300000,22M,50000,30000,18,Senior,Attur Road,400000,40.0,8.1,Low,Invest
+Healthcare,1500000,80M,350000,250000,60,Expert,Fairlands,2000000,28.5,9.4,Low,Invest
+Retail,80000,4M,12000,11000,4,Junior,Ammapet,0,8.3,3.1,High,Avoid
+Food Processing,650000,30M,110000,85000,32,Senior,Hasthampatti,800000,22.7,8.0,Medium,Invest
+IT Services,350000,18M,65000,50000,15,Intermediate,Alagapuram,400000,23.0,7.6,Medium,Improve
+Textile,150000,5M,25000,22000,10,Junior,Shevapet,0,12.0,4.8,High,Avoid
+Logistics,800000,35M,130000,95000,30,Senior,Seelanaickenpatti,1000000,26.9,8.5,Low,Invest
+SaaS,200000,8M,25000,28000,5,Intermediate,Karuppur,0,-12.0,2.5,High,Avoid
+Automobile,2500000,120M,450000,350000,85,Expert,Omalur Road,3000000,22.2,9.2,Low,Invest
+Education,600000,28M,90000,75000,25,Senior,Salem Junction,700000,16.6,7.7,Medium,Improve
+Textile,450000,22M,80000,55000,38,Senior,Gugai,550000,31.2,8.2,Low,Invest
+Agriculture,120000,15M,28000,18000,12,Intermediate,Attur Road,150000,35.7,7.4,Low,Invest
+IT Services,750000,45M,140000,100000,22,Senior,Alagapuram,900000,28.5,8.8,Low,Invest
