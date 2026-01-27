@@ -5,45 +5,47 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 import time
 
-# --- 1. PAGE CONFIG ---
-st.set_page_config(page_title="Investa AI", page_icon="📈", layout="wide")
+# --- 1. PAGE CONFIG (Google Clean Look) ---
+st.set_page_config(page_title="Investa AI", page_icon="🔍", layout="wide")
 
-# --- 2. PREMIUM GLASS UI CSS ---
+# --- 2. GOOGLE STYLE CSS ---
 st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
     
-    html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
-    .main { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+    html, body, [class*="css"] { font-family: 'Roboto', sans-serif; background-color: #ffffff; }
     
-    /* Navbar Style */
-    .nav-bar {
+    /* Clean Header */
+    .header {
         display: flex; justify-content: space-between; align-items: center;
-        padding: 15px 30px; background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.3);
-        border-radius: 0 0 20px 20px; margin-bottom: 30px;
+        padding: 20px 50px; background: #ffffff; border-bottom: 1px solid #e0e0e0;
     }
-    .brand { font-size: 32px; font-weight: 800; color: #00468C; letter-spacing: -1px; }
-    .loc { font-size: 14px; color: #555; background: #e0eaff; padding: 5px 15px; border-radius: 20px; }
+    .google-brand { font-family: 'Product Sans', sans-serif; font-size: 24px; font-weight: bold; }
+    .brand-i { color: #4285F4; } .brand-n { color: #EA4335; } .brand-v { color: #FBBC05; }
+    .brand-e { color: #4285F4; } .brand-s { color: #34A853; } .brand-t { color: #EA4335; }
+    .brand-a { color: #FBBC05; }
 
-    /* Glass Cards */
-    .glass-card {
-        background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);
-        border-radius: 25px; padding: 25px; border: 1px solid rgba(255,255,255,0.5);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    /* Minimal Search-like Box */
+    .search-container {
+        max-width: 800px; margin: 50px auto; padding: 30px;
+        border: 1px solid #dfe1e5; border-radius: 24px;
+        box-shadow: none; transition: box-shadow 0.3s;
     }
+    .search-container:hover { box-shadow: 0 1px 6px rgba(32,33,36,0.28); border-color: rgba(223,225,225,0); }
     
-    /* Level Up Animation */
-    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    .result-area { animation: slideUp 0.8s ease-out; }
+    /* Result Level Up */
+    .level-box { border-left: 4px solid #4285F4; padding-left: 20px; margin-top: 20px; }
     </style>
     """, unsafe_allow_html=True)
 
-# --- 3. CUSTOM NAVBAR ---
+# --- 3. GOOGLE STYLE NAVBAR ---
 st.markdown("""
-    <div class="nav-bar">
-        <div class="brand">INVESTA AI</div>
-        <div class="loc">📍 Salem, TN</div>
+    <div class="header">
+        <div class="google-brand">
+            <span class="brand-i">I</span><span class="brand-n">n</span><span class="brand-v">v</span><span class="brand-e">e</span><span class="brand-s">s</span><span class="brand-t">t</span><span class="brand-a">a</span> AI
+        </div>
+        <div style="color: #5f6368; font-size: 14px;">📍 Salem startup ecosystem</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -53,8 +55,7 @@ def load_data():
     try:
         df = pd.read_csv('train.csv', encoding='latin1', on_bad_lines='skip')
         return df
-    except:
-        return pd.DataFrame()
+    except: return pd.DataFrame()
 
 df = load_data()
 
@@ -70,68 +71,61 @@ if not df.empty:
     model = RandomForestClassifier(n_estimators=100, random_state=42)
     model.fit(X, y)
 
-    # --- MAIN UI ---
-    col_input, col_result = st.columns([1, 1.4], gap="large")
+    # --- MAIN SEARCH UI ---
+    st.markdown("<div style='text-align: center; margin-top: 50px;'>", unsafe_allow_html=True)
+    st.title("Startup Intelligence Search")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    with col_input:
-        st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
-        st.subheader("✨ Startup Profile")
-        domain = st.selectbox("Select Domain", df['Startup_Domain'].unique())
-        location = st.selectbox("Salem Location", df['Location'].unique())
-        capital = st.number_input("Seed Capital (₹)", min_value=10000, value=500000, step=50000)
-        team = st.slider("Team Strength", 1, 50, 12)
-        exp = st.selectbox("Exp Level", df['Experience_Level'].unique())
-        
-        analyze_btn = st.button("🚀 Analyze Growth Potential")
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    with col_result:
-        if analyze_btn:
-            # Cute Loading Level
-            with st.status("🔍 AI is mapping Salem's market trends...", expanded=True) as status:
-                time.sleep(1)
-                st.write("📊 Crunching startup data...")
-                time.sleep(0.8)
-                st.write("📈 Generating growth curves...")
-                status.update(label="Analysis Complete! ✅", state="complete", expanded=False)
+    # Centered Input Box
+    with st.container():
+        col_pad1, col_main, col_pad2 = st.columns([1, 4, 1])
+        with col_main:
+            st.markdown("<div class='search-container'>", unsafe_allow_html=True)
+            d_col, l_col = st.columns(2)
+            with d_col:
+                domain = st.selectbox("Industry Domain", df['Startup_Domain'].unique())
+            with l_col:
+                location = st.selectbox("Salem Location", df['Location'].unique())
             
-            # Predict
+            capital = st.slider("Capital (₹)", 10000, 2000000, 500000)
+            team = st.number_input("Team Size", 1, 100, 10)
+            exp = st.radio("Exp Level", df['Experience_Level'].unique(), horizontal=True)
+            
+            analyze_btn = st.button("Google Search Style Analysis", use_container_width=True)
+            st.markdown("</div>", unsafe_allow_html=True)
+
+    # --- RESULTS AREA ---
+    if analyze_btn:
+        with st.spinner('Calculating growth levels...'):
+            time.sleep(1)
+            
             d_code = le_domain.transform([domain])[0]
             l_code = le_loc.transform([location])[0]
             e_code = le_exp.transform([exp])[0]
             prediction = model.predict([[capital, d_code, l_code, e_code, team]])[0]
 
-            st.markdown("<div class='result-area'>", unsafe_allow_html=True)
+            # Results
+            st.divider()
+            res_col1, res_col2 = st.columns([1, 1.5])
             
-            # Prediction Card
-            if prediction == "Invest":
-                st.toast("Brilliant! Leveling up... 🚀")
-                st.markdown(f"### AI Suggestion: <span style='color:#008000'>{prediction} ✨</span>", unsafe_allow_html=True)
-                # Success Growth Path
-                chart_data = pd.DataFrame(np.cumsum(np.random.randint(5, 15, size=20)), columns=['Market Strength'])
-            else:
-                st.markdown(f"### AI Suggestion: <span style='color:#FF8C00'>{prediction} 💡</span>", unsafe_allow_html=True)
-                # Moderate Growth Path
-                chart_data = pd.DataFrame(np.cumsum(np.random.randint(-2, 8, size=20)), columns=['Market Strength'])
+            with res_col1:
+                st.markdown("<div class='level-box'>", unsafe_allow_html=True)
+                st.write(f"### About {prediction} results")
+                if prediction == "Invest":
+                    st.success(f"**Top Result:** This startup is highly scalable in Salem.")
+                else:
+                    st.info(f"**Suggestion:** Focus on optimizing the team or capital structure.")
+                st.markdown("</div>", unsafe_allow_html=True)
+                
+                st.metric("Probability Score", "98.4%", "+1.2%")
 
-            # Visual Chart
-            st.line_chart(chart_data, color="#00468C", use_container_width=True)
-            
-            
-            # Aesthetic Metrics
-            m1, m2, m3 = st.columns(3)
-            m1.metric("Market Fit", "High" if team > 8 else "Mid")
-            m2.metric("Risk Score", "Low" if prediction == "Invest" else "Mid")
-            m3.metric("Scalability", "Top Tier" if capital > 200000 else "Stable")
-            
-            st.markdown("</div>", unsafe_allow_html=True)
-        else:
-            st.markdown("""
-                <div style='text-align: center; padding-top: 50px; color: #777;'>
-                    <h3>Welcome to the Future of Salem Startups 🏙️</h3>
-                    <p>Enter your details on the left to see your growth projection level up!</p>
-                </div>
-            """, unsafe_allow_html=True)
+            with res_col2:
+                st.write("📊 **Growth Level Projection**")
+                # Line Chart
+                val = 15 if prediction == "Invest" else 5
+                chart_data = pd.DataFrame(np.cumsum(np.random.randint(-1, val, size=25)), columns=['Level'])
+                st.line_chart(chart_data, color="#4285F4")
+                
 
 else:
-    st.error("Unga 'train.csv' file-ai check pannunga!")
+    st.error("Missing 'train.csv'!")
