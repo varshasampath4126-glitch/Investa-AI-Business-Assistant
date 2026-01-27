@@ -6,77 +6,74 @@ from sklearn.preprocessing import LabelEncoder
 import time
 
 # --- 1. PAGE CONFIG ---
-st.set_page_config(page_title="Investa AI", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="Investa AI", page_icon="✨", layout="wide")
 
-# --- 2. ADVANCED CSS (Shadows, Hovers & Glassmorphism) ---
+# --- 2. ULTRA-COLOURFUL & VIBRANT CSS ---
 st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
     
-    html, body, [class*="css"] { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8f9fa; }
+    html, body, [class*="css"] { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+    }
 
-    /* Header Styling */
-    .main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: white; border-bottom: 1px solid #eee; margin-bottom: 30px; }
-    .logo { font-size: 28px; font-weight: 800; color: #1A73E8; }
-    .tagline { font-size: 14px; color: #5F6368; font-style: italic; }
+    /* Vibrant Header */
+    .header-box {
+        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        padding: 20px; border-radius: 20px; text-align: center;
+        margin-bottom: 30px; box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+    }
+    .main-title { color: white; font-size: 40px; font-weight: 800; letter-spacing: -1px; }
+    .sub-title { color: white; opacity: 0.9; font-size: 16px; }
 
-    /* Card Styling with Shadow & Hover */
-    [data-testid="stVerticalBlock"] > div:has(div.stNumberInput, div.stSelectbox, div.stSlider) {
+    /* Neon Input Cards with Hover Glow */
+    [data-testid="stVerticalBlock"] > div:has(div.stNumberInput, div.stSelectbox, div.stSlider, div.stTextInput) {
         background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-        border: 1px solid #f0f0f0;
-        margin-bottom: 15px;
-    }
-    [data-testid="stVerticalBlock"] > div:has(div.stNumberInput, div.stSelectbox, div.stSlider):hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-        border-color: #1A73E8;
-    }
-
-    /* Vibrant Buttons */
-    .stButton>button {
-        width: 100%;
-        background: linear-gradient(135deg, #1A73E8 0%, #0D47A1 100%);
-        color: white;
-        border-radius: 12px;
-        padding: 15px;
-        font-weight: 600;
-        border: none;
-        box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
-    }
-    .stButton>button:hover { box-shadow: 0 6px 20px rgba(26, 115, 232, 0.5); transform: scale(1.02); }
-
-    /* Result Level-Up Box */
-    .result-container {
-        background: #ffffff;
+        padding: 25px;
         border-radius: 20px;
-        padding: 30px;
-        border-left: 10px solid #1A73E8;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 2px solid transparent;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    [data-testid="stVerticalBlock"] > div:has(div.stNumberInput, div.stSelectbox, div.stSlider, div.stTextInput):hover {
+        transform: translateY(-8px);
+        border-color: #4facfe;
+        box-shadow: 0 15px 30px rgba(79, 172, 254, 0.2);
+    }
+
+    /* Electric Button */
+    .stButton>button {
+        background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+        color: white; border: none; padding: 18px; border-radius: 15px;
+        font-weight: 700; font-size: 18px; width: 100%;
+        box-shadow: 0 8px 20px rgba(37, 117, 252, 0.4);
+    }
+    .stButton>button:hover { transform: scale(1.02); box-shadow: 0 12px 25px rgba(37, 117, 252, 0.6); }
+
+    /* Prediction Glow Card */
+    .prediction-card {
+        background: white; border-radius: 25px; padding: 35px;
+        border-right: 8px solid #00f2fe;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        animation: glow 2s infinite alternate;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# --- 3. BRANDING HEADER ---
+# --- 3. VIBRANT HEADER ---
 st.markdown("""
-    <div class="main-header">
-        <div class="logo">INVESTA AI</div>
-        <div class="tagline">Empowering Entrepreneurs with Data-Driven Intelligence.</div>
+    <div class="header-box">
+        <div class="main-title">INVESTA AI ✨</div>
+        <div class="sub-text">Smart Business Intelligence for the Next Gen Startups</div>
     </div>
     """, unsafe_allow_html=True)
 
 # --- 4. ABOUT SECTION ---
-with st.expander("ℹ️ About Investa AI"):
-    st.write("""
-    **Investa AI** is a state-of-the-art predictive engine designed to analyze startup viability. 
-    By processing inputs like market demand, operational costs, and capital, it provides 
-    real-time investment suggestions and growth projections to help you scale smartly.
-    """)
+with st.expander("🌈 What is Investa AI?"):
+    st.markdown("Investa AI uses **Advanced Machine Learning** to predict your startup's future. Enter your data and watch the magic happen!")
 
-# --- 5. DATA LOADING & MODEL ---
+# --- 5. DATA & MODEL ---
 @st.cache_data
 def load_data():
     try:
@@ -97,31 +94,34 @@ if not df.empty:
     model = RandomForestClassifier(n_estimators=100, random_state=42)
     model.fit(X, y)
 
-    # --- 6. INPUT GRID (Coloured & Structured) ---
-    st.subheader("🚀 Project Analysis Parameters")
+    # --- 6. COLOURFUL INPUT GRID ---
+    st.subheader("🎨 Customize Your Startup Profile")
     
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        domain = st.selectbox("Startup Domain", df['Startup_Domain'].unique())
-        capital = st.number_input("Initial Capital (₹)", value=500000)
-        market_size = st.selectbox("Market Demand", ["High", "Medium", "Low"])
-    with c2:
-        rev = st.number_input("Expected Monthly Revenue (₹)", value=100000)
-        ops = st.number_input("Operational Costs (₹)", value=40000)
-        location = st.selectbox("Location / Area", df['Location'].unique())
-    with c3:
-        team = st.slider("Team Size", 1, 50, 10)
-        exp = st.selectbox("Experience Level", df['Experience_Level'].unique())
-        audience = st.text_input("Target Audience", "Gen Z / Small Businesses")
+    r1_c1, r1_c2 = st.columns(2)
+    with r1_c1:
+        domain = st.selectbox("🚀 Startup Domain", df['Startup_Domain'].unique())
+        capital = st.number_input("💰 Initial Capital (₹)", value=500000)
+    with r1_c2:
+        market = st.select_slider("📊 Market Demand", options=["Low", "Medium", "High", "Extreme"])
+        revenue = st.number_input("💵 Expected Monthly Revenue (₹)", value=150000)
 
-    # --- 7. PREDICTION & LIVELY CHART ---
-    if st.button("RUN INVESTA INTELLIGENCE"):
-        with st.status("Analyzing Market Trends...", expanded=True) as status:
-            time.sleep(1)
-            st.write("Checking Location Viability...")
-            time.sleep(0.7)
-            st.write("Simulating Revenue Streams...")
-            status.update(label="Analysis Complete!", state="complete", expanded=False)
+    r2_c1, r2_c2 = st.columns(2)
+    with r2_c1:
+        ops = st.number_input("📉 Operational Costs (₹)", value=60000)
+        location = st.selectbox("📍 Location / Area", df['Location'].unique())
+    with r2_c2:
+        team = st.slider("👥 Team Size", 1, 100, 15)
+        exp = st.selectbox("🎓 Experience Level", df['Experience_Level'].unique())
+
+    target = st.text_input("🎯 Target Audience", "Eg: Tech Students, Coffee Lovers")
+
+    # --- 7. ANALYSIS & LIVELY CHART ---
+    if st.button("PREDICT MY SUCCESS 🚀"):
+        with st.status("🔮 AI is scanning market vibes...", expanded=True) as status:
+            time.sleep(1.2)
+            st.write("Processing financial metrics...")
+            time.sleep(0.8)
+            status.update(label="Analysis Ready! ✨", state="complete", expanded=False)
 
         d_code = le_domain.transform([domain])[0]
         l_code = le_loc.transform([location])[0]
@@ -130,33 +130,29 @@ if not df.empty:
 
         st.divider()
         
-        res_col, chart_col = st.columns([1, 1.5])
+        c1, c2 = st.columns([1, 1.5])
         
-        with res_col:
-            st.markdown("<div class='result-container'>", unsafe_allow_html=True)
+        with c1:
+            st.markdown("<div class='prediction-card'>", unsafe_allow_html=True)
             if prediction == "Invest":
-                st.success(f"### AI Decision: {prediction} ✅")
-                st.write("Excellent! Your parameters align with high-growth startup patterns.")
-                score = 92
+                st.success(f"## DECISION: {prediction} 💎")
+                st.write("**Verdict:** Your startup has elite growth potential!")
+                line_color = "#00f2fe"
             else:
-                st.warning(f"### AI Decision: {prediction} ⚠️")
-                st.write("Caution advised. Refine your operational costs or team structure.")
-                score = 54
+                st.warning(f"## DECISION: {prediction} ⚡")
+                st.write("**Verdict:** High risk detected. Optimize your costs.")
+                line_color = "#ff4b4b"
             
-            st.metric("Success Probability", f"{score}%", f"{score-50}%")
+            st.metric("Growth Index", "Elite" if prediction == "Invest" else "Moderate")
             st.markdown("</div>", unsafe_allow_html=True)
 
-        with chart_col:
-            st.subheader("📈 Lively Growth Projection")
-            # Lively Line Chart: Prediction-ku yetha maadhiri uyarum
-            base = 20 if prediction == "Invest" else 5
-            growth_data = pd.DataFrame(
-                np.cumsum(np.random.randint(-2, base, size=30)), 
-                columns=['Level']
-            )
-            st.line_chart(growth_data, color="#1A73E8")
+        with c2:
+            st.subheader("📈 Real-time Growth Level Prediction")
+            # Lively Chart
+            data = pd.DataFrame(np.cumsum(np.random.randint(-2, 15 if prediction == "Invest" else 6, size=30)), columns=['Level'])
+            st.line_chart(data, color=line_color)
             
-            st.caption("Estimated growth level over a 30-month period.")
+            st.caption("This chart visualizes your predicted success level over 30 months.")
 
 else:
-    st.error("Error: 'train.csv' missing. Please ensure your dataset is in the folder.")
+    st.error("Error: 'train.csv' not found. Please upload the data file.")
