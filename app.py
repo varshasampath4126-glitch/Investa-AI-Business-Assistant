@@ -1,158 +1,155 @@
-import streamlit as st  
+# app.py - INVESTA AI: Business Analyzer (Updated for your exact dataset)
+# Run: streamlit run app.py (place train.csv in same folder)
+
+import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
+import plotly.express as px
 import time
 
-# --- 1. PAGE CONFIG ---
-st.set_page_config(page_title="Investa AI", page_icon="🚀", layout="wide")
+# Page config
+st.set_page_config(page_title="Investa AI", page_icon="💰", layout="wide")
 
-# --- 2. DRIBBBLE-STYLE PREMIUM CSS ---
+# Premium CSS
 st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-    
-    html, body, [class*="css"] { 
-        font-family: 'Plus Jakarta Sans', sans-serif; 
-        background-color: #ffffff !important; 
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+html, body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.header { background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); padding: 3rem 2rem; border-radius: 30px; color: white; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+.investa-title { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin: 0; }
+.slogan { font-size: 1.3rem; opacity: 0.95; margin-top: 0.5rem; }
+.metric-card { background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.3); }
+</style>
+""", unsafe_allow_html=True)
 
-    /* Labels - Bold Black */
-    label, .stMarkdown p {
-        color: #000000 !important;
-        font-weight: 700 !important;
-        font-size: 15px !important;
-    }
-
-    /* Vibrant Gradient Header */
-    .header-nav {
-        display: flex; justify-content: space-between; align-items: center;
-        padding: 30px 60px; background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-        border-radius: 0 0 30px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(37, 117, 252, 0.2);
-    }
-    .brand { font-size: 32px; font-weight: 800; color: white; letter-spacing: -1px; }
-    .tag { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 500; }
-
-    /* Input Card - Only Hover Glow */
-    [data-testid="stVerticalBlock"] > div:has(div.stNumberInput, div.stSelectbox, div.stSlider, div.stTextInput) {
-        background: #ffffff;
-        padding: 24px;
-        border-radius: 20px;
-        border: 1px solid #f0f0f0;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        margin-bottom: 12px;
-    }
-    /* Glow when I touch the input */
-    [data-testid="stVerticalBlock"] > div:has(div.stNumberInput, div.stSelectbox, div.stSlider, div.stTextInput):hover {
-        transform: translateY(-6px);
-        border-color: #6a11cb;
-        box-shadow: 0 20px 40px rgba(106, 17, 203, 0.15); /* Vibrant Glow */
-    }
-
-    /* Professional Action Button */
-    .stButton>button {
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        color: white; border: none; padding: 20px; border-radius: 15px;
-        font-weight: 700; font-size: 18px; width: 100%; transition: 0.3s;
-        box-shadow: 0 10px 20px rgba(106, 17, 203, 0.3);
-    }
-    .stButton>button:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(106, 17, 203, 0.5); }
-
-    /* Summary Dashboard Cards */
-    .summary-card {
-        background: white; border-radius: 20px; padding: 30px;
-        border: 1px solid #f0f0f0; box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# --- 3. BRANDING ---
+# Header with Slogan
 st.markdown("""
-    <div class="header-nav">
-        <div class="brand">INVESTA AI</div>
-        <div class="tag">Next-Gen Startup Intelligence • Dribbble Edition</div>
-    </div>
-    """, unsafe_allow_html=True)
+<div class="header">
+    <h1 class="investa-title">INVESTA AI</h1>
+    <p class="slogan">🔮 Precision Business Intelligence | Where Data Meets Destiny</p>
+</div>
+""", unsafe_allow_html=True)
 
-# --- 4. DATA LOADING ---
 @st.cache_data
 def load_data():
-    try:
-        df = pd.read_csv('train.csv', encoding='latin1', on_bad_lines='skip')
-        return df
-    except: return pd.DataFrame()
+    df = pd.read_csv('train.csv')
+    return df
 
 df = load_data()
 
-if not df.empty:
-    # Basic ML Logic
-    le_domain, le_loc, le_exp = LabelEncoder(), LabelEncoder(), LabelEncoder()
-    df['Domain_Code'] = le_domain.fit_transform(df['Startup_Domain'])
-    df['Loc_Code'] = le_loc.fit_transform(df['Location'])
-    df['Exp_Code'] = le_exp.fit_transform(df['Experience_Level'])
-
-    X = df[['Initial_Capital', 'Domain_Code', 'Loc_Code', 'Exp_Code', 'Team_Size']]
-    y = df['Decision']
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
-    model.fit(X, y)
-
-    # --- 5. SYSTEM INPUTS (The 8 Parameters) ---
-    st.subheader("📊 Startup Evaluation Engine")
+# Train model for your exact columns
+@st.cache_data
+def train_model(df):
+    le_domain = LabelEncoder()
+    le_market = LabelEncoder()
+    le_exp = LabelEncoder()
+    le_loc = LabelEncoder()
+    le_risk = LabelEncoder()
     
-    col1, col2, col3 = st.columns(3, gap="large")
+    df['DomainCode'] = le_domain.fit_transform(df['Startup_Domain'])
+    df['MarketCode'] = le_market.fit_transform(df['Market_Size'])
+    df['ExpCode'] = le_exp.fit_transform(df['Experience_Level'])
+    df['LocCode'] = le_loc.fit_transform(df['Location'])
+    
+    features = ['Initial_Capital', 'DomainCode', 'MarketCode', 'Expected_Monthly_Revenue', 
+                'Operational_Cost', 'Team_Size', 'ExpCode', 'LocCode']
+    X = df[features]
+    y = (df['Decision'] == 'Invest').astype(int)
+    
+    model = RandomForestClassifier(n_estimators=200, random_state=42)
+    model.fit(X, y)
+    return model, {'domain': le_domain, 'market': le_market, 'exp': le_exp, 'loc': le_loc}
+
+model, encoders = train_model(df)
+
+# Main interface - Your 8 inputs
+st.subheader("📊 Business Analysis Engine")
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.markdown("**Core Business**")
+    domain = st.selectbox("Startup Domain", df['Startup_Domain'].unique(), key="domain")
+    capital = st.number_input("Initial Capital", value=500000, key="capital")
+
+with col2:
+    st.markdown("**Financials**")
+    market_size = st.selectbox("Market Size", df['Market_Size'].unique(), key="market")
+    revenue = st.number_input("Expected Monthly Revenue", value=120000, key="revenue")
+    costs = st.number_input("Operational Cost", value=80000, key="costs")
+
+with col3:
+    st.markdown("**Operations**")
+    team_size = st.slider("Team Size", 1, 100, 15, key="team")
+    exp_level = st.selectbox("Experience Level", df['Experience_Level'].unique(), key="exp")
+    location = st.selectbox("Location", df['Location'].unique(), key="loc")
+
+if st.button("🚀 ANALYZE INVESTMENT VIABILITY", type="primary", use_container_width=True):
+    with st.spinner("Running AI Investment Analysis..."):
+        time.sleep(1)
+        
+        # Predict using your exact dataset structure
+        codes = {
+            'domain': encoders['domain'].transform([domain])[0],
+            'market': encoders['market'].transform([market_size])[0],
+            'exp': encoders['exp'].transform([exp_level])[0],
+            'loc': encoders['loc'].transform([location])[0]
+        }
+        
+        input_data = np.array([[capital, codes['domain'], codes['market'], revenue, costs,
+                               team_size, codes['exp'], codes['loc']]])
+        
+        prediction = model.predict(input_data)[0]
+        confidence = model.predict_proba(input_data)[0].max() * 100
+        
+        # Business metrics
+        profit_margin = ((revenue - costs) / revenue * 100) if revenue > 0 else 0
+        runway = capital / costs if costs > 0 else float('inf')
+        growth_score = min(10, (profit_margin/10 + team_size/20 + confidence/20))
+        
+    # Results dashboard
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        domain = st.selectbox("1. Startup Domain", df['Startup_Domain'].unique())
-        capital = st.number_input("2. Initial Capital (₹)", value=500000)
-        market = st.selectbox("3. Market Size/Demand", ["High Demand", "Moderate", "Niche"])
-        
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        color = "🟢 INVEST" if prediction else "🔴 AVOID"
+        st.metric("AI Decision", color, f"{confidence:.1f}% Confidence")
+        st.markdown('</div>', unsafe_allow_html=True)
+    
     with col2:
-        revenue = st.number_input("4. Expected Monthly Revenue (₹)", value=150000)
-        ops_cost = st.number_input("5. Operational Costs (₹)", value=60000)
-        location = st.selectbox("7. Location & Target Audience", df['Location'].unique())
-
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        st.metric("Profit Margin", f"{profit_margin:.1f}%")
+        st.markdown('</div>', unsafe_allow_html=True)
+    
     with col3:
-        team_size = st.slider("6. Team Size", 1, 100, 15)
-        exp_level = st.selectbox("Team Experience Level", df['Experience_Level'].unique())
-        past_data = st.selectbox("8. Past Data Available?", ["Available", "New Startup"])
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        st.metric("Runway (Months)", f"{runway:.1f}")
+        st.markdown('</div>', unsafe_allow_html=True)
+    
+    with col4:
+        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+        st.metric("Growth Score", f"{growth_score:.1f}/10")
+        st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Charts
+    col1, col2 = st.columns(2)
+    with col1:
+        fig = px.pie(values=[confidence/100, 1-confidence/100], 
+                    names=["Invest", "Avoid"], 
+                    title="Investment Probability")
+        st.plotly_chart(fig, use_container_width=True)
+    
+    with col2:
+        runway_data = {'Months': range(1, min(25, int(runway)+1)), 
+                      'Capital': [capital - i*costs for i in range(min(24, int(runway)))]}
+        fig2 = px.line(pd.DataFrame(runway_data), title="Cash Runway")
+        st.plotly_chart(fig2, use_container_width=True)
 
-    st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("RUN INTELLIGENCE ANALYSIS 🚀"):
-        with st.status("🔮 Mapping Startup Viability...", expanded=False):
-            time.sleep(1.5)
-        
-        d_code = le_domain.transform([domain])[0]
-        l_code = le_loc.transform([location])[0]
-        e_code = le_exp.transform([exp_level])[0]
-        prediction = model.predict([[capital, d_code, l_code, e_code, team_size]])[0]
+# Dataset preview
+with st.expander("📈 Dataset Preview (train.csv)"):
+    st.dataframe(df.head(10), use_container_width=True)
+    st.caption("Powered by your real business data from Textile, Steel, IT Services, Food Processing...")
 
-        st.divider()
-        
-        # --- 6. VISUAL OUTPUT: LIVELY CHART & METRICS ---
-        res_col, chart_col = st.columns([1, 1.5], gap="large")
-
-        with res_col:
-            st.markdown("<div class='summary-card'>", unsafe_allow_html=True)
-            if prediction == "Invest":
-                st.success(f"### Result: {prediction} ✅")
-                st.write("**Profit Potential:** High")
-                color = "#6a11cb"
-            else:
-                st.warning(f"### Result: {prediction} ⚠️")
-                st.write("**Risk Level:** Significant")
-                color = "#ff4b4b"
-            
-            st.metric("Success Index", "94.2%" if prediction == "Invest" else "42.8%")
-            st.markdown("</div>", unsafe_allow_html=True)
-
-        with chart_col:
-            st.subheader("📈 Real-time Growth Level Prediction")
-                        step = 15 if prediction == "Invest" else 5
-            lively_vals = np.cumsum(np.random.randint(-1, step, size=30))
-            chart_df = pd.DataFrame(lively_vals, columns=['Market Level'])
-            st.line_chart(chart_df, color=color)
-            st.caption("Estimated growth level based on inputs over 30 evaluation cycles.")
-
-else:
-    st.error("Missing 'train.csv'! Please upload the data file.")
+st.markdown("---")
+st.markdown("<p style='text-align: center; color: rgba(255,255,255,0.8);'>INVESTA AI 🔮 | Precision Business Intelligence</p>", unsafe_allow_html=True)
