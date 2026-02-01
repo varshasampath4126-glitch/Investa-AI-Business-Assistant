@@ -1,4 +1,11 @@
-streamlit
-pandas
-numpy
-scikit-learn
+# requirements.txt for Investa AI - Startup Business Analyzer
+# Save as requirements.txt in same folder as app.py
+
+streamlit==1.38.0
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.1
+plotly==5.22.0
+
+# Optional: For enhanced performance and caching
+# pyarrow==17.0.0
